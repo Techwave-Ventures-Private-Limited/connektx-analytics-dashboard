@@ -207,7 +207,7 @@ export default function LiveUsersPage() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-center mb-4 md:mb-8 px-4"
+          className="text-center mb-2 md:mb-8 px-4"
         >
           <h2 className="text-xl md:text-5xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400">
             India's First Professional Social Media App Has Launched— Download Now.
@@ -215,7 +215,7 @@ export default function LiveUsersPage() {
         </motion.div>
 
         {/* 2. New User Popup Card (Controlled by notificationUser state) */}
-        <div className="h-20 md:h-24 w-full flex justify-center px-4 mb-4 md:mb-8 pointer-events-none">
+        <div className="h-20 md:h-24 w-full flex justify-center px-4 mb-2 md:mb-20 pointer-events-none">
           <AnimatePresence mode="wait">
             {notificationUser && (
               <motion.div
@@ -238,7 +238,7 @@ export default function LiveUsersPage() {
         </div>
 
         {/* 1. The Lively Counter Section */}
-        <div className="flex-1 flex flex-col items-center justify-center -mt-4 md:-mt-10">
+        <div className="flex-1 flex flex-col items-center justify-center -mt-55 md:-mt-10">
           <div className="flex items-center justify-center gap-2 md:gap-3 mb-6 md:mb-8">
             <span className="relative flex h-3 w-3 md:h-4 md:w-4">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-75"></span>
