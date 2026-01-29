@@ -166,7 +166,7 @@ export default function LiveUsersPage() {
   }, [lastAnnouncedId, isMuted]);
 
   return (
-    <div className="min-h-screen bg-black flex relative overflow-hidden font-sans text-white selection:bg-purple-500/30">
+    <div className="h-screen bg-black flex relative overflow-hidden font-sans text-white selection:bg-purple-500/30">
 
       {/* Lively Background FX */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_30%,_var(--tw-gradient-stops))] from-purple-900/30 via-black to-black pointer-events-none" />
@@ -262,7 +262,7 @@ export default function LiveUsersPage() {
         </div>
 
         {/* 3. Bottom Left QR Code / Download CTA */}
-        <div className="absolute bottom-4 left-4 right-4 md:bottom-1 md:left-8 md:right-auto bg-zinc-900/80 backdrop-blur-lg p-4 md:p-5 rounded-3xl border border-zinc-800/60 flex flex-row items-center gap-4 md:gap-6 shadow-xl max-w-md mx-auto md:mx-0">
+        <div className="absolute bottom-10 left-4 right-4 md:bottom-1 md:left-8 md:right-auto bg-zinc-900/80 backdrop-blur-lg p-4 md:p-5 rounded-3xl border border-zinc-800/60 flex flex-row items-center gap-4 md:gap-6 shadow-xl max-w-md mx-auto md:mx-0">
           <div className="bg-white p-3 rounded-2xl shadow-inner flex-shrink-0">
             <div style={{ height: "auto", margin: "0 auto", maxWidth: 100, width: "100%" }} className="md:max-w-[120px]">
               <QRCode
