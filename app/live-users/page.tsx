@@ -262,9 +262,9 @@ export default function LiveUsersPage() {
         </div>
 
         {/* 3. Bottom Left QR Code / Download CTA */}
-        <div className="absolute bottom-4 left-4 right-4 md:bottom-8 md:left-8 md:right-auto bg-zinc-900/80 backdrop-blur-lg p-4 md:p-5 rounded-3xl border border-zinc-800/60 flex flex-col md:flex-row items-center gap-4 md:gap-6 shadow-xl max-w-md mx-auto md:mx-0">
-          <div className="hidden md:block bg-white p-3 rounded-2xl shadow-inner">
-            <div style={{ height: "auto", margin: "0 auto", maxWidth: 80, width: "100%" }}>
+        <div className="absolute bottom-4 left-4 right-4 md:bottom-1 md:left-8 md:right-auto bg-zinc-900/80 backdrop-blur-lg p-4 md:p-5 rounded-3xl border border-zinc-800/60 flex flex-row items-center gap-4 md:gap-6 shadow-xl max-w-md mx-auto md:mx-0">
+          <div className="bg-white p-3 rounded-2xl shadow-inner flex-shrink-0">
+            <div style={{ height: "auto", margin: "0 auto", maxWidth: 100, width: "100%" }} className="md:max-w-[120px]">
               <QRCode
                 size={256}
                 style={{ height: "auto", maxWidth: "100%", width: "100%" }}
@@ -273,26 +273,15 @@ export default function LiveUsersPage() {
               />
             </div>
           </div>
-          <div className="text-center md:text-left">
-            <h3 className="text-white font-bold text-lg md:text-xl mb-1 flex items-center justify-center md:justify-start gap-2">
-              <Smartphone size={20} className="text-green-400" /> We are Live!
+          <div className="text-left flex-1">
+            <h3 className="text-white font-bold text-base md:text-xl mb-1 flex items-center gap-2">
+              <Smartphone size={18} className="text-green-400 md:w-5 md:h-5" /> We are Live!
             </h3>
-            <p className="text-zinc-400 text-xs md:text-sm leading-snug mb-3">
-              <span className="md:hidden">Click below to download Connektx from the Play Store.</span>
-              <span className="hidden md:inline">Scan the QR code to download Connektx from the Play Store.</span>
+            <p className="text-zinc-400 text-[11px] md:text-sm leading-snug mb-2 md:mb-3">
+              Scan the QR code to download Connektx from the Play Store.
             </p>
 
-            {/* Mobile Download Button */}
-            <a
-              href={PLAYSTORE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="md:hidden w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold py-2 px-6 rounded-full text-sm flex items-center justify-center gap-2 mb-2"
-            >
-              Download Now
-            </a>
-
-            <span className="text-[10px] font-bold text-purple-400 bg-purple-400/10 px-3 py-1 rounded-full uppercase tracking-wider">
+            <span className="text-[9px] md:text-[10px] font-bold text-purple-400 bg-purple-400/10 px-2 md:px-3 py-1 rounded-full uppercase tracking-wider">
               Get Connected Now
             </span>
           </div>
