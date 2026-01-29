@@ -1,9 +1,13 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  turbopack: {
-    root: 'c:/Users/91960/connektx-analytics-dashboard',
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  // Explicitly ensure turbo is not being used for the build
+  experimental: {
+    turbo: {
+      // If you had any turbo settings here, remove them
+    },
   },
+  // This helps Netlify handle the build output correctly
+  distDir: '.next', 
 };
 
-export default nextConfig;
+module.exports = nextConfig;
