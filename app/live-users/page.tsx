@@ -200,46 +200,22 @@ export default function LiveUsersPage() {
       </button>
 
       {/* --- LEFT MAIN AREA: STATS & QR --- */}
-      <div className="flex-1 flex flex-col relative z-10 pl-8 pt-32">
+      <div className="flex-1 flex flex-col relative z-10 pl-4 md:pl-8 pt-24 md:pt-32 pr-4 md:pr-0">
 
         {/* Launch Heading */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-center mb-8 md:mb-12 px-4"
+          className="text-center mb-4 md:mb-8 px-4"
         >
           <h2 className="text-xl md:text-5xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400">
-            India’s First Professional Social Media App Has Launched— Download Now.
+            India's First Professional Social Media App Has Launched— Download Now.
           </h2>
         </motion.div>
 
-        {/* 1. The Lively Counter Section */}
-        <div className="flex-1 flex flex-col items-center justify-center -mt-10 md:-mt-20">
-          <div className="flex items-center justify-center gap-3 mb-8">
-            <span className="relative flex h-4 w-4">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-4 w-4 bg-red-600"></span>
-            </span>
-            <h2 className="text-zinc-300 text-xs md:text-lg uppercase tracking-[0.2em] font-bold">Live Community Size</h2>
-          </div>
-
-          <div className="relative group cursor-default">
-            <div className="absolute -inset-6 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-full blur-3xl opacity-40 group-hover:opacity-60 transition-opacity animate-spin-very-slow"></div>
-            <div className="absolute -inset-[6px] rounded-full bg-[conic-gradient(from_0deg,transparent_0_deg,#3b82f6_90deg,#ec4899_180deg,#3b82f6_270deg,transparent_360deg)] animate-spin-slow opacity-80"></div>
-
-            <div className="relative bg-black rounded-full p-2">
-              <div className="bg-zinc-950/80 rounded-full p-16 backdrop-blur-sm border border-zinc-800/50">
-                <div className="text-6xl md:text-[10rem] font-black leading-none text-white tracking-tighter text-center px-6">
-                  {data?.total.toLocaleString() ?? "..."}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
         {/* 2. New User Popup Card (Controlled by notificationUser state) */}
-        <div className="h-24 w-full flex justify-center absolute bottom-56 md:bottom-48 left-0 pointer-events-none">
+        <div className="h-20 md:h-24 w-full flex justify-center px-4 mb-4 md:mb-8 pointer-events-none">
           <AnimatePresence mode="wait">
             {notificationUser && (
               <motion.div
@@ -247,21 +223,45 @@ export default function LiveUsersPage() {
                 initial={{ y: 50, opacity: 0, scale: 0.8 }}
                 animate={{ y: 0, opacity: 1, scale: 1 }}
                 exit={{ y: 20, opacity: 0, scale: 0.9 }}
-                className="bg-gradient-to-r from-purple-900/90 to-blue-900/90 backdrop-blur-xl border border-purple-500/30 pl-4 pr-8 py-4 rounded-full flex items-center gap-4 shadow-2xl shadow-purple-500/20"
+                className="bg-gradient-to-r from-purple-900/90 to-blue-900/90 backdrop-blur-xl border border-purple-500/30 pl-3 md:pl-4 pr-6 md:pr-8 py-3 md:py-4 rounded-full flex items-center gap-3 md:gap-4 shadow-2xl shadow-purple-500/20"
               >
-                <div className="bg-white/10 p-2 rounded-full text-purple-200">
-                  <Sparkles size={20} />
+                <div className="bg-white/10 p-1.5 md:p-2 rounded-full text-purple-200">
+                  <Sparkles size={16} className="md:w-5 md:h-5" />
                 </div>
                 <div>
-                  <div className="text-[10px] text-purple-300 font-bold uppercase tracking-wider">Just Joined</div>
-                  <div className="text-lg font-bold text-white whitespace-nowrap">{notificationUser.name}</div>
+                  <div className="text-[9px] md:text-[10px] text-purple-300 font-bold uppercase tracking-wider">Just Joined</div>
+                  <div className="text-base md:text-lg font-bold text-white whitespace-nowrap">{notificationUser.name}</div>
                 </div>
               </motion.div>
             )}
           </AnimatePresence>
         </div>
 
-        {/* 3. Bottom Left QR Code CTA */}
+        {/* 1. The Lively Counter Section */}
+        <div className="flex-1 flex flex-col items-center justify-center -mt-4 md:-mt-10">
+          <div className="flex items-center justify-center gap-2 md:gap-3 mb-6 md:mb-8">
+            <span className="relative flex h-3 w-3 md:h-4 md:w-4">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-full w-full bg-red-600"></span>
+            </span>
+            <h2 className="text-zinc-300 text-xs md:text-lg uppercase tracking-[0.2em] font-bold">Live Community Size</h2>
+          </div>
+
+          <div className="relative group cursor-default">
+            <div className="absolute -inset-4 md:-inset-6 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-full blur-2xl md:blur-3xl opacity-40 group-hover:opacity-60 transition-opacity animate-spin-very-slow"></div>
+            <div className="absolute -inset-[4px] md:-inset-[6px] rounded-full bg-[conic-gradient(from_0deg,transparent_0_deg,#3b82f6_90deg,#ec4899_180deg,#3b82f6_270deg,transparent_360deg)] animate-spin-slow opacity-80"></div>
+
+            <div className="relative bg-black rounded-full p-1 md:p-2">
+              <div className="bg-zinc-950/80 rounded-full p-8 md:p-16 backdrop-blur-sm border border-zinc-800/50">
+                <div className="text-5xl md:text-[10rem] font-black leading-none text-white tracking-tighter text-center px-4 md:px-6">
+                  {data?.total.toLocaleString() ?? "..."}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* 3. Bottom Left QR Code / Download CTA */}
         <div className="absolute bottom-4 left-4 right-4 md:bottom-8 md:left-8 md:right-auto bg-zinc-900/80 backdrop-blur-lg p-4 md:p-5 rounded-3xl border border-zinc-800/60 flex flex-col md:flex-row items-center gap-4 md:gap-6 shadow-xl max-w-md mx-auto md:mx-0">
           <div className="hidden md:block bg-white p-3 rounded-2xl shadow-inner">
             <div style={{ height: "auto", margin: "0 auto", maxWidth: 80, width: "100%" }}>
@@ -291,6 +291,7 @@ export default function LiveUsersPage() {
             >
               Download Now
             </a>
+
             <span className="text-[10px] font-bold text-purple-400 bg-purple-400/10 px-3 py-1 rounded-full uppercase tracking-wider">
               Get Connected Now
             </span>
